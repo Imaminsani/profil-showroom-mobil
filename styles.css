@@ -896,16 +896,17 @@ iframe {
   min-height: 430px;
   border: 0;
   border-radius: 10px;
-  filter: grayscale(1) invert(0.92) contrast(0.9);
-}
-
-body.light-mode iframe {
-  filter: grayscale(0.2) contrast(0.94);
+  filter: none;
 }
 
 .map-panel {
   overflow: hidden;
   padding: 0;
+  box-shadow: 0 22px 70px rgba(0,0,0,0.26);
+}
+
+body.light-mode .map-panel {
+  box-shadow: 0 22px 70px rgba(15,23,42,0.14);
 }
 
 .faq details {
