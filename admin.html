@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin AutoLux Motors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="auth-locked">
+  <section class="login-screen" id="loginScreen" aria-label="Login admin">
+    <form class="login-card" id="loginForm">
+      <div class="admin-brand login-brand">
+        <span>A</span>
+        <strong>AutoLux Admin</strong>
+      </div>
+      <p class="login-kicker">Secure Dashboard</p>
+      <h1>Masuk Admin</h1>
+      <p class="login-copy">Gunakan ID dan password admin untuk mengubah konten website publish showroom.</p>
+      <div class="field">
+        <label for="adminUsername">ID Admin</label>
+        <input id="adminUsername" type="text" autocomplete="username" placeholder="admin@autolux.local">
+      </div>
+      <div class="field">
+        <label for="adminPassword">Password</label>
+        <input id="adminPassword" type="password" autocomplete="current-password" placeholder="Password admin">
+      </div>
+      <p class="login-error" id="loginError"></p>
+      <button class="primary login-submit" type="submit">Masuk Dashboard</button>
+    </form>
+  </section>
+
+  <aside class="admin-sidebar">
+    <a class="admin-brand" href="admin.html">
+      <span>A</span>
+      <strong>AutoLux Admin</strong>
+    </a>
+    <nav>
+      <a href="#brand">Brand</a>
+      <a href="#display">Mode</a>
+      <a href="#hero">Hero</a>
+      <a href="#about">Tentang</a>
+      <a href="#stats">Statistik</a>
+      <a href="#catalog">Katalog</a>
+      <a href="#reviews">Testimoni</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+    <a class="view-site" href="index.html" target="_blank">Lihat Website</a>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div>
+        <p>Content Management</p>
+        <h1>Edit Tampilan Publish</h1>
+      </div>
+      <div class="admin-actions">
+        <button class="secondary" id="exportBtn" type="button">Export JSON</button>
+        <label class="secondary file-btn" for="importInput">Import JSON</label>
+        <input id="importInput" type="file" accept="application/json">
+        <button class="danger" id="resetBtn" type="button">Reset</button>
+        <button class="secondary" id="logoutBtn" type="button">Keluar</button>
+        <button class="primary" id="saveBtn" type="button">Simpan Publish</button>
+      </div>
+    </header>
+
+    <p class="status" id="statusText">Hubungkan Supabase, edit konten, lalu simpan publish ke database.</p>
+
+    <div class="workspace">
+      <form class="editor" id="adminForm"></form>
+      <section class="preview-panel" aria-label="Preview website">
+        <div class="preview-header">
+          <strong>Live Preview</strong>
+          <button class="secondary" id="refreshPreviewBtn" type="button">Refresh Preview</button>
+        </div>
+        <iframe id="previewFrame" title="Preview AutoLux Motors" src="index.html"></iframe>
+      </section>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

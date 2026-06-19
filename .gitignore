@@ -1,0 +1,4 @@
+php-server.log
+php-server.err.log
+.DS_Store
+Thumbs.db
